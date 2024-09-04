@@ -9,16 +9,23 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   let bassMap = map(bass, 0, 100, 0, 1);
 volhistory.push(bassMap);
 stroke(255);
+noFill();
+beginShape();
 for (var i = 0; i < volhistory.length; i++) {
-  var y = map(volhistory[i], 0, 1, height, 0);
-  point(i, y);
+  var y = map(volhistory[i], 0, 1, height / 2 , 0);
+  vertex(i, y);
 
-  ellipse(i, y, 3, 3);
+  ellipse(i, y, 1, 1);
   console.log(volhistory);
 }
+endShape();
 
+if (volhistory.length > width - 50) {
+  volhistory.splice(0, 1);
+}
 
-
+stroke(255, 0, 0);
+line(volhistory.length, 0, volhistory.length, height);
 
 }
 // ellipse(200, 350, 300, bass * 20);
