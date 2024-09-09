@@ -20,14 +20,17 @@ for (var i = 0; i < volhistory.length; i++) {
 }
 endShape();
 
-if (volhistory.length > width - 50) {
+if (volhistory.length > width) {
   volhistory.splice(0, 1);
 }
 
 stroke(255, 0, 0);
 line(volhistory.length, 0, volhistory.length, height);
 
+
 }
+
+
 // ellipse(200, 350, 300, bass * 20);
 
 // fill(45, 190, 252);
