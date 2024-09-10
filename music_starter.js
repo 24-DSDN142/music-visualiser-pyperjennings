@@ -15,8 +15,10 @@ rect(250, 350, 400, 290);
 rect(250, 420, 400, 220);
 //speaker of the radio
 //large circles
-circle(380, 400, 130, 150)
-circle(120, 400, 130, 150)
+let ellipseLength = map(drum, 0, 100, 20, 100)
+ellipse(380, 400, 130, ellipseLength);
+let ellipseLength1 = map(drum, 0, 100, 20, 100)
+ellipse(120, 400, 130, ellipseLength);
 //small circles
 circle(380, 400, 40, 150)
 circle(120, 400, 40, 150)
@@ -63,7 +65,7 @@ stroke(255);
 noFill();
 beginShape();
 for (var i = 0; i < volhistory.length; i++) {
-  var y = map(volhistory[i], 0, 1, height / 4 , 0);
+  var y = map(volhistory[i], 0, 1, height / 7 , 0);
   vertex(i, y);
 
   ellipse(i, y, 1, 1);
