@@ -8,49 +8,33 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   textSize(24);
   let bassMap = map(bass, 0, 100, 0, 1);
 
-//radio base
-strokeWeight(8);
-stroke(247, 215, 246);
-rect(250, 350, 300, 170);
-strokeWeight(4);
-stroke(250, 170, 248);
-rect(250, 350, 300, 170);
-strokeWeight(2);
-stroke(247, 79, 242);
-rect(250, 350, 300, 170);
+
+//base of the radio
+stroke(255);
+rect(250, 350, 400, 290);
+rect(250, 420, 400, 220);
+
+//speaker of the radio
+//large circles
+circle(380, 400, 130, 150)
+circle(120, 400, 130, 150)
+//small circles
+circle(380, 400, 40, 150)
+circle(120, 400, 40, 150)
+//outside square with buttons 
+rect(250, 400, 110, 120);
+rect(250, 390, 110, 70);
+rect(250, 390, 80, 30);
+rect(250, 390, 25, 10);
+circle(225, 390, 15, 5);
+circle(275, 390, 15, 5);
+circle(275, 390, 5, 5);
+circle(225, 390, 5, 5);
 
 
-// let rectLength = map(vocal, 0, 100, 0, 300);
-// rect(250, 380, 75, rectLength);
-fill(250, 170, 248)
-strokeWeight(4);
-stroke(247, 215, 246)
-let ellipseLength = map(drum, 0, 100, 20, 100)
-ellipse(160, 350, 100, ellipseLength);
-let ellipseLength1 = map(drum, 0, 100, 20, 100)
-ellipse(340, 350, 100, ellipseLength);
 
-//radio details 
-fill(247, 79, 242)
-stroke(250, 170, 248);
-circle(120, 420, 10, 150)
-circle(380, 420, 10, 150)
-stroke(250, 170, 248);
-circle(120, 280, 10, 150)
-circle(380, 280, 10, 150)
 
-//radio insert
-strokeWeight(2.5);
-stroke(250, 170, 248);
-fill(247, 215, 246);
-rect(250, 380, 75, 30);
 
-// stroke(101, 202, 252);
-// rect(250, 380, 60, 35);
-
-stroke(250, 170, 248);
-circle(235, 380, 10, 150)
-circle(265, 380, 10, 150)
 
 
 //music line
@@ -78,6 +62,55 @@ line(volhistory.length, 0, volhistory.length, height);
 
 
 }
+
+//radio base
+strokeWeight(8);
+stroke(247, 215, 246);
+rect(250, 350, 300, 170);
+strokeWeight(4);
+stroke(250, 170, 248);
+rect(250, 350, 300, 170);
+strokeWeight(2);
+stroke(247, 79, 242);
+rect(250, 350, 300, 170);
+
+
+// let rectLength = map(vocal, 0, 100, 0, 300);
+// rect(250, 380, 75, rectLength);
+// strokeWeight(4);
+// stroke(247, 215, 246)
+// let ellipseLength = map(drum, 0, 100, 20, 100)
+// ellipse(160, 350, 100, ellipseLength);
+// let ellipseLength1 = map(drum, 0, 100, 20, 100)
+// ellipse(340, 350, 100, ellipseLength);
+
+//radio details 
+fill(247, 79, 242)
+stroke(250, 170, 248);
+circle(120, 420, 10, 150)
+circle(380, 420, 10, 150)
+stroke(250, 170, 248);
+circle(120, 280, 10, 150)
+circle(380, 280, 10, 150)
+
+//radio insert
+strokeWeight(2.5);
+stroke(250, 170, 248);
+fill(247, 215, 246);
+rect(250, 380, 75, 30);
+
+// stroke(101, 202, 252);
+// rect(250, 380, 60, 35);
+
+stroke(250, 170, 248);
+circle(235, 380, 10, 150)
+circle(265, 380, 10, 150)
+
+
+
+
+
+
 
 // //radio speakers 
 // strokeWeight(6);
