@@ -10,23 +10,25 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 //base of the radio
-stroke(255);
+stroke(191, 0, 255); 
 rect(250, 350, 400, 290);
 rect(250, 420, 400, 220);
 //speaker of the radio
 //large circles
+stroke(255, 0, 153)
 let ellipseLength = map(drum, 0, 100, 20, 100)
 ellipse(380, 400, 130, ellipseLength);
 let ellipseLength1 = map(drum, 0, 100, 20, 100)
 ellipse(120, 400, 130, ellipseLength);
 //small circles
-circle(380, 400, 40, 150)
-circle(120, 400, 40, 150)
+// circle(380, 400, 40, 150)
+// circle(120, 400, 40, 150)
 //outside square with buttons 
 rect(250, 400, 110, 120);
 //med-larg rect
 rect(250, 390, 110, 70);
 //medium rect
+stroke(37, 226, 230);
 rect(250, 390, 80, 30);
 //small rect
 rect(250, 390, 25, 10);
@@ -37,16 +39,19 @@ circle(275, 390, 15, 5);
 circle(225, 390, 5, 5);
 circle(275, 390, 5, 5);
 //top part of radio
+stroke(255, 0, 153);
 rect(250, 240, 380, 50);
 fill(0);
 circle(400, 260, 50, 100);
 circle(400, 260, 35, 100);
 //small buttons
+stroke(37, 226, 230);
 rect(85, 225, 30, 5);
 rect(85, 235, 30, 5);
 rect(85, 245, 30, 5);
 rect(85, 255, 30, 5);
 //handle
+stroke(191, 0, 255);
 rect(250, 180, 350, 50);
 rect(250, 187, 330, 35);
 
