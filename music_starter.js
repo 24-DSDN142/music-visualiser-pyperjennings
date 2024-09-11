@@ -3,43 +3,62 @@ var volhistory = [];
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(0);
+  fill(0, 204, 190);
   textFont('Verdana'); // please use CSS safe fonts
   rectMode(CENTER)
-  textSize(24);
+  textSize(50);
+  text(words, 370, 600);
   let bassMap = map(bass, 0, 100, 0, 1);
+  // console.log(counter + " " + words);
 
 
+
+push();
+translate(200, 0);
 //base of the radio
+fill(0);
 strokeWeight(3);
-stroke(191, 0, 255); 
+stroke(27, 127, 120); 
 rect(250, 350, 400, 290);
 rect(250, 420, 400, 220);
 //speaker of the radio
 //large circles
-stroke(255, 0, 153)
-let ellipseLength = map(drum, 0, 55, 20, 100)
+stroke(255, 72, 88)
+fill(255, 72, 88);
+let ellipseLength = map(other, 0, 55, 20, 100)
 ellipse(380, 400, 130, ellipseLength);
-let ellipseLength1 = map(drum, 0, 55, 20, 100)
+let ellipseLength1 = map(other, 0, 55, 20, 100)
 ellipse(120, 400, 130, ellipseLength);
 //small circles
-let ellipseLength2 = map(vocal, 0, 150, 20, 100)
-ellipse(380, 400, 40, ellipseLength2);
-let ellipseLength3 = map(vocal, 0, 150, 20, 100)
-ellipse(120, 400, 40, ellipseLength3);
+fill(27, 127, 120);
+stroke(27, 127, 120);
+let ellipseLength2 = map(drum, 0, 150, 20, 100)
+ellipse(380, 400, 60, ellipseLength2);
+let ellipseLength3 = map(drum, 0, 150, 20, 100)
+ellipse(120, 400, 60, ellipseLength3);
+//small circle 
+fill(0, 204, 190);
+stroke(0, 204, 190);
+let ellipseLength4 = map(vocal, 0, 500, 20, 100);
+ellipse(120, 400, 30, ellipseLength4);
+let ellipseLength5 = map(vocal, 0, 500, 20, 100);
+ellipse(380, 400, 30, ellipseLength5);
 //outside square with buttons 
+fill(0),
 strokeWeight(1);
 rect(250, 400, 110, 120);
 //med-larg rect
 strokeWeight(1);
 rect(250, 390, 110, 70);
 //medium rect
-stroke(37, 226, 230);
+stroke(27, 127, 120);
 strokeWeight(1)
 rect(250, 390, 80, 30);
 //small rect
 strokeWeight(1);
 rect(250, 390, 25, 10);
 //medium circle
+stroke(255, 72, 87);
 strokeWeight(1);
 circle(225, 390, 15, 5);
 circle(275, 390, 15, 5);
@@ -47,23 +66,24 @@ circle(275, 390, 15, 5);
 circle(225, 390, 5, 5);
 circle(275, 390, 5, 5);
 //top part of radio
-stroke(255, 0, 153);
+stroke(0, 204, 192);
 strokeWeight(2);
 rect(250, 240, 380, 50);
+stroke(255, 72, 87);
 strokeWeight(1);
 fill(0);
 circle(400, 260, 50, 100);
 circle(400, 260, 35, 100);
 //small buttons
 strokeWeight(1);
-stroke(37, 226, 230);
+stroke(0, 204, 192);
 rect(85, 225, 30, 5);
 rect(85, 235, 30, 5);
 rect(85, 245, 30, 5);
 rect(85, 255, 30, 5);
 //handle
 strokeWeight(3);
-stroke(191, 0, 255);
+stroke(27, 127, 120);
 rect(250, 180, 350, 50);
 rect(250, 187, 330, 35);
 //buttons on the top 
@@ -76,49 +96,47 @@ circle(245, 285, 20, 120);
 circle(285, 285, 20, 120);
 // circle(325, 285, 20, 120);
 rect(340, 286, 55, 20)
-
-
-
-
-
+pop();
 
 
 //music line
 strokeWeight(1);
 volhistory.push(bassMap);
-stroke(37, 226, 230);
+stroke(255, 72, 88);
 noFill();
 beginShape();
 for (var i = 0; i < volhistory.length; i++) {
-  var y = map(volhistory[i], 0, 1, height / 7 , 0);
+  var y = map(volhistory[i], 0, 1, height / 8 , 0);
   vertex(i, y);
 
-  ellipse(i, y, 1, 1);
-  console.log(volhistory);
+  ellipse(i, y, 0.1, 5);
+  // console.log(volhistory);
 }
 endShape();
+
 
 if (volhistory.length > width) {
   volhistory.splice(0, 1);
 }
 
-// stroke(255, 0, 0);
+// // stroke(255, 0, 0);
+
 // line(volhistory.length, 0, volhistory.length, height);
 
 
 
 }
 
-//radio base
-strokeWeight(8);
-stroke(247, 215, 246);
-rect(250, 350, 300, 170);
-strokeWeight(4);
-stroke(250, 170, 248);
-rect(250, 350, 300, 170);
-strokeWeight(2);
-stroke(247, 79, 242);
-rect(250, 350, 300, 170);
+// //radio base
+// strokeWeight(8);
+// stroke(247, 215, 246);
+// rect(250, 350, 300, 170);
+// strokeWeight(4);
+// stroke(250, 170, 248);
+// rect(250, 350, 300, 170);
+// strokeWeight(2);
+// stroke(247, 79, 242);
+// rect(250, 350, 300, 170);
 
 
 // let rectLength = map(vocal, 0, 100, 0, 300);
