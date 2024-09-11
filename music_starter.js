@@ -10,29 +10,37 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
 
 //base of the radio
+strokeWeight(3);
 stroke(191, 0, 255); 
 rect(250, 350, 400, 290);
 rect(250, 420, 400, 220);
 //speaker of the radio
 //large circles
 stroke(255, 0, 153)
-let ellipseLength = map(drum, 0, 100, 20, 100)
+let ellipseLength = map(drum, 0, 55, 20, 100)
 ellipse(380, 400, 130, ellipseLength);
-let ellipseLength1 = map(drum, 0, 100, 20, 100)
+let ellipseLength1 = map(drum, 0, 55, 20, 100)
 ellipse(120, 400, 130, ellipseLength);
 //small circles
-// circle(380, 400, 40, 150)
-// circle(120, 400, 40, 150)
+let ellipseLength2 = map(vocal, 0, 150, 20, 100)
+ellipse(380, 400, 40, ellipseLength2);
+let ellipseLength3 = map(vocal, 0, 150, 20, 100)
+ellipse(120, 400, 40, ellipseLength3);
 //outside square with buttons 
+strokeWeight(1);
 rect(250, 400, 110, 120);
 //med-larg rect
+strokeWeight(1);
 rect(250, 390, 110, 70);
 //medium rect
 stroke(37, 226, 230);
+strokeWeight(1)
 rect(250, 390, 80, 30);
 //small rect
+strokeWeight(1);
 rect(250, 390, 25, 10);
 //medium circle
+strokeWeight(1);
 circle(225, 390, 15, 5);
 circle(275, 390, 15, 5);
 //small circle
@@ -40,22 +48,34 @@ circle(225, 390, 5, 5);
 circle(275, 390, 5, 5);
 //top part of radio
 stroke(255, 0, 153);
+strokeWeight(2);
 rect(250, 240, 380, 50);
+strokeWeight(1);
 fill(0);
 circle(400, 260, 50, 100);
 circle(400, 260, 35, 100);
 //small buttons
+strokeWeight(1);
 stroke(37, 226, 230);
 rect(85, 225, 30, 5);
 rect(85, 235, 30, 5);
 rect(85, 245, 30, 5);
 rect(85, 255, 30, 5);
 //handle
+strokeWeight(3);
 stroke(191, 0, 255);
 rect(250, 180, 350, 50);
 rect(250, 187, 330, 35);
-
-
+//buttons on the top 
+strokeWeight(2);
+circle(85, 285, 20, 120);
+circle(125, 285, 20, 120);
+circle(165, 285, 20, 120);
+circle(205, 285, 20, 120);
+circle(245, 285, 20, 120);
+circle(285, 285, 20, 120);
+// circle(325, 285, 20, 120);
+rect(340, 286, 55, 20)
 
 
 
@@ -66,7 +86,7 @@ rect(250, 187, 330, 35);
 //music line
 strokeWeight(1);
 volhistory.push(bassMap);
-stroke(255);
+stroke(37, 226, 230);
 noFill();
 beginShape();
 for (var i = 0; i < volhistory.length; i++) {
@@ -82,8 +102,8 @@ if (volhistory.length > width) {
   volhistory.splice(0, 1);
 }
 
-stroke(255, 0, 0);
-line(volhistory.length, 0, volhistory.length, height);
+// stroke(255, 0, 0);
+// line(volhistory.length, 0, volhistory.length, height);
 
 
 
