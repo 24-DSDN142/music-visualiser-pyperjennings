@@ -1,13 +1,19 @@
 var volhistory = [];
-
+let firstRun = true; 
+let stars;
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+  if(firstRun){
+    stars = loadImage("stars.png")
+
+
+    firstRun = false
+  }
+  
+  
   background(0);
-  fill(0, 204, 190);
-  textFont('Verdana'); // please use CSS safe fonts
-  rectMode(CENTER)
-  textSize(50);
-  text(words, 370, 600);
+  image(stars, 0, 0, width, height)
+
   let bassMap = map(bass, 0, 100, 0, 1);
   // console.log(counter + " " + words);
 
@@ -119,6 +125,13 @@ if (volhistory.length > width) {
   volhistory.splice(0, 1);
 }
 
+
+
+fill(0, 204, 190);
+textFont('Verdana'); // please use CSS safe fonts
+rectMode(CENTER)
+textSize(50);
+text(words, 370, 600);
 // // stroke(255, 0, 0);
 
 // line(volhistory.length, 0, volhistory.length, height);
