@@ -17,19 +17,19 @@ strokeWeight(3);
 stroke(27, 127, 120); 
 rect(250, 350, 400, 290);
 rect(250, 420, 400, 220);
-//speaker of the radio - large circles
-stroke(255, 72, 88)
+//speaker - large circles
+stroke(255, 72, 88);
 fill(255, 72, 88);
-let ellipseLength = map(other, 0, 55, 20, 100)
+let ellipseLength = map(other, 0, 55, 20, 100);
 ellipse(380, 400, 130, ellipseLength);
-let ellipseLength1 = map(other, 0, 55, 20, 100)
+let ellipseLength1 = map(other, 0, 55, 20, 100);
 ellipse(120, 400, 130, ellipseLength);
 //speaker of the radio - medium circles
 fill(27, 127, 120);
 stroke(27, 127, 120);
-let ellipseLength2 = map(drum, 0, 150, 20, 100)
+let ellipseLength2 = map(drum, 0, 150, 20, 100);
 ellipse(380, 400, 60, ellipseLength2);
-let ellipseLength3 = map(drum, 0, 150, 20, 100)
+let ellipseLength3 = map(drum, 0, 150, 20, 100);
 ellipse(120, 400, 60, ellipseLength3);
 //speaker of the radio - small circle 
 fill(0, 204, 190);
@@ -39,7 +39,7 @@ ellipse(120, 400, 30, ellipseLength4);
 let ellipseLength5 = map(vocal, 0, 500, 20, 100);
 ellipse(380, 400, 30, ellipseLength5);
 // outside square bewteen speaker 
-fill(0),
+fill(0);
 strokeWeight(1);
 rect(250, 400, 110, 120);
 //middle rectangle 
@@ -47,7 +47,7 @@ strokeWeight(1);
 rect(250, 390, 110, 70);
 //small rect
 stroke(27, 127, 120);
-strokeWeight(1)
+strokeWeight(1);
 rect(250, 390, 80, 30);
 //smallest rect
 strokeWeight(1);
@@ -89,7 +89,7 @@ circle(165, 285, 20, 120);
 circle(205, 285, 20, 120);
 circle(245, 285, 20, 120);
 circle(285, 285, 20, 120);
-rect(340, 286, 55, 20)
+rect(340, 286, 55, 20);
 pop();
 //music line
 strokeWeight(1);
@@ -110,7 +110,7 @@ if (volhistory.length > width) {
 //song lyrics 
 fill(0, 204, 190);
 textFont('Verdana'); 
-rectMode(CENTER)
+rectMode(CENTER);
 textSize(50);
 text(words, 370, 600);
 }
